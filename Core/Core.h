@@ -95,5 +95,22 @@ namespace tsunami {
 			y += v.y * k;
 			z += v.z * k;
 		}
+
+		/*Returns the dot product of this vector with the given one*/
+		float scalarProduct(const Vector3& v)  const{
+			return x * v.x + y * v.y + z * v.z;
+		}
+
+		/*Returns the vector/cross product of this vector with the given one*/
+		Vector3 vectorProduct(const Vector3& v) const {
+			return Vector3(y * v.z - z * v.y,
+							z * v.x - x * v.z,
+							x * v.y - y * v.x);
+		}
+
+		/*Update this vector to be  the vector product of its current value and the given vector*/
+		void operator %= (const Vector3& v) {
+			*this = vectorProduct(v);
+		}
 	};
 } 
