@@ -16,7 +16,7 @@ namespace tsunami {
 			: x(x), y(y), z(z) {}
 		~Vector3(){};
 
-	private:
+	//private:
 		float pad = 0;
 		void invert() {
 			x = -x;
@@ -89,7 +89,7 @@ namespace tsunami {
 			return Vector3(x - v.x, y - v.x, z - v.z);
 		}
 
-		/*Add the given vector to this,scaled by the given k amount*/
+		/*Add the given vector to this, scaled by the given k amount*/
 		void addScaledVector(const Vector3& v, float k) {
 			x += v.x * k;
 			y += v.y * k;
